@@ -36,7 +36,18 @@
 
 <script>
 export default {
-  name: "Userform"
+  name: "Userform",
+  data() {
+    return {
+      email: "",
+      first_name: "",
+      last_name: "",
+      password: ""
+    };
+  },
+  methods: {
+    onSubmit() {}
+  }
 };
 </script>
 
