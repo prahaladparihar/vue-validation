@@ -1,6 +1,6 @@
 <template>
   <div class="container col-sm-5">
-    <h3 class="text-info">ADD THIS FORM</h3>
+    <h3 class="text-warning">FILL THIS FORM</h3>
     <form class="form" v-on:submit.prevent="onSubmit">
       <label for="email">Email</label>
       <input type="email" v-model.trim="email" class="form-control" placeholder="Enter Email">
