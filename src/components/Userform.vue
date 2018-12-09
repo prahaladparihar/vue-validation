@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-sm-5">
+  <div class="container col-sm-4">
     <h3 class="text-warning">FILL THIS FORM</h3>
     <form class="form" v-on:submit.prevent="onSubmit">
       <label for="email">Email :</label>
@@ -121,7 +121,18 @@ export default {
     }
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      if (!this.$v.$invalid) {
+        const user = {
+          email: this.email,
+          first_name: this.first_name,
+          last_name: this.last_name,
+          password: this.password,
+          repeat_password: this.repeat_password
+        };
+        console.log(user);
+      }
+    }
   }
 };
 </script>
