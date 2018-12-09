@@ -73,7 +73,11 @@
         <span class="text-danger" v-if="!$v.repeat_password.sameAsPassword">Password much be same</span>
         <span class="text-warning" v-if="!$v.repeat_password.required">*Password required</span>
       </div>
-      <button type="submit" class="btn btn-outline-success my-4 float-right">SUBMIT</button>
+      <button
+        type="submit"
+        :disabled="$v.$invalid"
+        class="btn btn-outline-success my-4 float-right"
+      >SUBMIT</button>
     </form>
     <!--Get validators on page  -->
     <!-- <div class="validators">
@@ -143,5 +147,8 @@ span {
 }
 .error {
   border: 1px solid red;
+}
+button:disabled {
+  cursor: not-allowed;
 }
 </style>
