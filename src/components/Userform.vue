@@ -11,6 +11,11 @@
         class="form-control"
         placeholder="Enter Email"
       >
+      <p
+        class="text-danger"
+        v-if="!$v.email.email"
+      >Please enter valid email address "abs@email.com "</p>
+      <p class="text-warning" v-if="!$v.email.required">*Email required</p>
       <br>
       <label for="first_name">First Name</label>
       <input
@@ -21,6 +26,7 @@
         class="form-control"
         placeholder="Enter First Name"
       >
+      <p class="text-warning" v-if="!$v.first_name.required">*Name required</p>
       <br>
       <label for="last_name">Last Name</label>
       <input
@@ -39,8 +45,9 @@
         v-model.trim="password"
         @input="$v.password.$touch"
         class="form-control"
-        placeholder="Enter Password"
+        placeholder="Enter Password error"
       >
+      <p class="text-warning" v-if="!$v.password.required">*Password required</p>
       <br>
       <button type="submit" class="btn btn-outline-success my-4">Submit</button>
     </form>
