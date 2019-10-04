@@ -1,3 +1,5 @@
+//vue main.js
+
 import Vue from 'vue'
 import Vuelidate from 'vuelidate' //vue validation
 import App from './App.vue'
